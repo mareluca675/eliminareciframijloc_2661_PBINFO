@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+unsigned long long n, s = 0, nrcif, nrcif1 = 0, mij, nr = 0, p = 1, uc;
+
+int main()
+{
+    cin  >> n;
+    
+    unsigned long long copien = n;
+    
+    while(n > 0)
+    {
+        nrcif ++;
+        n = n / 10;
+    }
+    
+    mij = (nrcif + 1) / 2;
+    n = copien;
+    
+    while(n > 0)
+    {
+        nrcif1 ++;
+        uc = n % 10;
+        
+        if(nrcif1 != mij)
+        {
+            nr = nr + uc * p;
+            p = p * 10;
+        }
+        
+        n = n / 10;
+    }
+    
+    cout << nr;
+    
+    return 0;
+}
